@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
-
     --background: 0 0% 100%;
 
     --foreground: 240 10% 3.9%;
@@ -55,10 +52,9 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
-
     --background: 240 10% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -105,11 +101,9 @@
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {
@@ -120,7 +114,6 @@
   }
 }
 
-
 @layer components {
   .gradient-lr {
     @apply bg-gradient-to-r from-darkGreen to-lightGreen;
@@ -128,13 +121,40 @@
   .gradient-tb {
     @apply bg-gradient-to-b from-darkGreen to-lightGreen;
   }
-  .sec2-img-p{
+  .sec2-img-p {
     perspective: 700px;
   }
-  .sec2-img{
+  .sec2-img {
     width: 300px;
     height: 450px;
     transform: rotateX(25deg) rotateY(-10deg) rotateZ(-40deg) translateY(-40px);
     border-radius: 10px;
   }
+}
+
+.scroll-section-outer {
+  overflow: hidden;
+}
+.scroll-section-inner {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.scroll-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+.h1{
+  @apply text-[3rem] font-bold;
+}
+
+.faq-image{
+  transform:rotateX(0deg) rotateY(187deg) rotateZ(-21deg);
 }
