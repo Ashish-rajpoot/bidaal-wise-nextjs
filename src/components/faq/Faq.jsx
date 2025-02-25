@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import FaqLinks from "./FaqLinks";
-import FaqQuestion from "./FaqQuestion";
 import { faqData } from "@/data/data";
+import { useState } from "react";
+import { FaqAccordion } from "./FaqAccordion";
+import FaqLinks from "./FaqLinks";
 
 const Faq = () => {
   const [selectedNav, setSelectedNav] = useState("Hardware");
@@ -41,8 +41,9 @@ const Faq = () => {
         </div>
 
         {/* FAQ Questions */}
-        <div className="mx-auto min-w-[65vw]">
-          <FaqQuestion data={selectedData} />
+        <div className="mx-auto min-w-[65vw] px-5">
+          {/* <FaqQuestion data={selectedData} /> */}
+          <FaqAccordion data={selectedData}/>
         </div>
       </div>
     </div>
