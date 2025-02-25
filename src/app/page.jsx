@@ -1,11 +1,10 @@
 "use client";
 import Banner from "@/components/Banner";
 import Faq from "@/components/faq/Faq";
-import HorizontalScroll from "@/components/HorizontalScroll";
-import Nav from "@/components/Nav";
-import Section1 from "@/components/Section1";
+import Hero from "@/components/Hero";
 import Section2 from "@/components/Section2";
 import Stories from "@/components/Stories";
+import Nav from "@/components/ui/Nav";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -22,7 +21,7 @@ export default function Home() {
         <div className="w-screen h-full relative">
           <Nav />
         </div>
-        <Section1 />
+        <Hero />
       </div>
       <Banner />
       <Section2 />

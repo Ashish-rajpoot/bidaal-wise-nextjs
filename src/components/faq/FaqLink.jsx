@@ -1,8 +1,23 @@
-import Link from "next/link";
+"use client";
 import React from "react";
 
-const FaqLink = ({ link }) => {
-  return <Link href={`${link.href}`} className="text-2xl ">{link.label} </Link>;
+const FaqLink = ({ link, selectedNav, setSelectedNav }) => {
+  const handleClick = () => {
+    setSelectedNav(link.label);
+  };
+
+  return (
+    <div className="w-fit">
+      <button
+        onClick={handleClick}
+        className={`text-2xl font-medium hover:font-semibold transition-all whitespace-nowrap block hover:text-white ${
+          selectedNav === link.label ? "text-white" : "text-slate-400"
+        }`}
+      >
+        {link.label}
+      </button>
+    </div>
+  );
 };
 
 export default FaqLink;

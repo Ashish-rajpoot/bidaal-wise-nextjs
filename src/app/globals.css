@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -107,7 +107,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 font-sans;
   }
   body {
     @apply bg-background text-foreground;
@@ -156,11 +156,38 @@
 }
 
 .faq-image {
-  transform: rotateX(0deg) rotateY(187deg) rotateZ(-21deg) translateY(94px);
+  transform: rotateX(0deg) rotateY(187deg) rotateZ(-21deg) translateY(294px) translateX(-90px);
 }
 
-.faq-h1{
+.faq-h1 {
   font-size: 2.5rem;
   letter-spacing: 0.3rem;
   font-weight: 700;
+}
+.card-arrow {
+  animation: moveArrow 2s infinite;
+  will-change: transform;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
