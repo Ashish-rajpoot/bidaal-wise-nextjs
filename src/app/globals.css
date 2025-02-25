@@ -151,10 +151,16 @@
   align-items: center;
   background-color: pink;
 }
-.h1{
+.h1 {
   @apply text-[3rem] font-bold;
 }
 
-.faq-image{
-  transform:rotateX(0deg) rotateY(187deg) rotateZ(-21deg);
+.faq-image {
+  transform: rotateX(0deg) rotateY(187deg) rotateZ(-21deg) translateY(94px);
+}
+
+.faq-h1{
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
 }

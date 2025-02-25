@@ -1,6 +1,6 @@
 "use client";
 import Banner from "@/components/Banner";
-import Faq from "@/components/Faq";
+import Faq from "@/components/faq/Faq";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import Nav from "@/components/Nav";
 import Section1 from "@/components/Section1";
