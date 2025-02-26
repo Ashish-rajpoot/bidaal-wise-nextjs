@@ -1,8 +1,8 @@
 "use client";
+import { routeLinks } from "@/data/data";
 import Image from "next/image";
 
 const MobileNav = ({ navOpen, setNavOpen }) => {
- 
   return (
     <div className="absolute top-0 bg-gradient-to-b left-0 right-0 h-screen flex justify-start items-center flex-col z-20 space-y-1 overflow-y-auto">
       <div className="py-10 justify-between items-center flex z-10">
@@ -23,23 +23,16 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
         </div>
       </div>
 
-      <a className="mob-nav" href="/">
-        product
-      </a>
-
-      <a className="mob-nav" href="/about">
-        Solution
-      </a>
-
-      <a className="mob-nav" href="/contact">
-        resources
-      </a>
-
-      <a className="mob-nav" href="/contact">
-        company
-      </a>
-
-      <a className="mob-nav" href="/contact">
+      {routeLinks.map((link) => (
+        <a
+          href={`${link.url}`}
+          className=" mob-nav capitalize"
+          key={link.label}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a className="mob-nav capitalize" href="/contact">
         contact us
       </a>
     </div>

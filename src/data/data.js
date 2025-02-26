@@ -1,3 +1,21 @@
+export const routeLinks = [
+  {
+    label: "Product",
+    url: "/",
+  },
+  {
+    label: "Solution",
+    url: "/",
+  },
+  {
+    label: "resources",
+    url: "/",
+  },
+  {
+    label: "company",
+    url: "/",
+  },
+];
 export const faqLinks = [
   {
     label: "Hardware",

@@ -1,23 +1,26 @@
 "use client";
 import { findQuestionByInputValue } from "@/utils/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaqAccordion } from "./FaqAccordion";
 import FaqLinks from "./FaqLinks";
 import { faqData } from "@/data/data";
 
 const Faq = () => {
-  const [faqsData, setFaqData] = useState(faqData);
   const [selectedNav, setSelectedNav] = useState("Hardware");
-  const selectedData = faqsData.find((data) => data.category === selectedNav);
-  const [search, setSearch] = useState("");
+  const [faqsData, setFaqData] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const inputValue = e.target.value;
-    setSearch(inputValue);
-    const filterdData = inputValue.length > 0 ? findQuestionByInputValue(inputValue) : faqData;
-    setFaqData(filterdData);
+    const input = e.target.value;
+    setInputValue(input);
   };
+
+  useEffect(() => {
+    inputValue
+      ? setFaqData(findQuestionByInputValue(inputValue))
+      : setFaqData(faqData.find((data) => data.category === selectedNav));
+  }, [selectedNav, inputValue]);
 
   return (
     <div className="relative min-h-screen gradient-tb flex flex-col space-y-0 py-10">
@@ -47,8 +50,7 @@ const Faq = () => {
 
         {/* FAQ Questions */}
         <div className="mx-auto min-w-[65vw] px-5">
-          {/* <FaqQuestion data={selectedData} /> */}
-          <FaqAccordion data={selectedData} />
+          <FaqAccordion data={faqsData} />
         </div>
       </div>
     </div>

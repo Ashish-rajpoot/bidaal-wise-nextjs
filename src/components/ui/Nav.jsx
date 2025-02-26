@@ -3,6 +3,7 @@ import Image from "next/image";
 import LinkButton from "./Button";
 import MobileNav from "./MobileNav";
 import { useEffect, useState } from "react";
+import { routeLinks } from "@/data/data";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -17,18 +18,13 @@ const Nav = () => {
       />
       <div className="grow flex justify-evenly  pl-20 max-lg:hidden relative">
         <ul className="flex items-center justify-evenly  max-md:flex-col max-md:gap-y-2 gap-x-14 bg-navBtnClr py-2 px-5 rounded-lg font-semibold">
-          <li>
-            <a href="/">product</a>
-          </li>
-          <li>
-            <a href="/about">Solution</a>
-          </li>
-          <li>
-            <a href="/contact">resources</a>
-          </li>
-          <li>
-            <a href="/contact">company</a>
-          </li>
+          {routeLinks.map((link) => (
+            <li key={link.label}>
+              <a href={`${link.url}`} className="capitalize">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
         <LinkButton>contact us</LinkButton>
       </div>
