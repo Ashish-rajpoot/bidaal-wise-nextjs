@@ -156,7 +156,8 @@
 }
 
 .faq-image {
-  transform: rotateX(0deg) rotateY(187deg) rotateZ(-21deg) translateY(294px) translateX(-90px);
+  transform: rotateX(0deg) rotateY(187deg) rotateZ(-21deg) translateY(294px)
+    translateX(-90px);
 }
 
 .faq-h1 {
@@ -181,8 +182,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -190,4 +189,58 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.container {
+  @apply flex w-full h-[70vh] overflow-hidden relative  max-lg:space-x-0;
+}
+
+.content {
+  @apply flex-1 overflow-y-auto px-5 max-md:px-0 scroll-smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+
+  /* ✨ Scroll Snapping */
+  scroll-snap-type: y mandatory;
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+.box {
+  @apply min-h-[70vh]  flex items-center justify-center text-[1.5rem] max-md:text-[0.9rem]  text-justify 
+         bg-transparent text-white transition-transform px-[10rem] max-lg:px-5 opacity-100;
+
+  /* ✨ Snap Alignment */
+  scroll-snap-align: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Active Box Animation */
+.box.active {
+  @apply opacity-100 scale-105; /* Slight scale-up effect */
+}
+
+/* Image Container */
+.image-container {
+  @apply w-[40%] flex justify-center items-center relative;
+}
+
+/* Image Transition */
+.image-container img {
+  @apply max-w-full max-h-full absolute opacity-0 transition-opacity duration-700 scale-90;
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+/* Active Image Effect */
+.image-container img.active {
+  @apply opacity-100 scale-100;
+}
+
+.mob-nav {
+  @apply py-5 w-full px-5 bg-stone-500 ;
+}
+
+.nav-svg {
+  @apply right-2 flex justify-center items-center ring-2 rounded-lg;
 }

@@ -1,17 +1,22 @@
 "use client";
-import { faqData } from "@/data/data";
+import { findQuestionByInputValue } from "@/utils/utils";
 import { useState } from "react";
 import { FaqAccordion } from "./FaqAccordion";
 import FaqLinks from "./FaqLinks";
+import { faqData } from "@/data/data";
 
 const Faq = () => {
+  const [faqsData, setFaqData] = useState(faqData);
   const [selectedNav, setSelectedNav] = useState("Hardware");
-  const selectedData = faqData.find((data) => data.category === selectedNav);
+  const selectedData = faqsData.find((data) => data.category === selectedNav);
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearch(e.target.value);
+    const inputValue = e.target.value;
+    setSearch(inputValue);
+    const filterdData = inputValue.length > 0 ? findQuestionByInputValue(inputValue) : faqData;
+    setFaqData(filterdData);
   };
 
   return (
@@ -43,7 +48,7 @@ const Faq = () => {
         {/* FAQ Questions */}
         <div className="mx-auto min-w-[65vw] px-5">
           {/* <FaqQuestion data={selectedData} /> */}
-          <FaqAccordion data={selectedData}/>
+          <FaqAccordion data={selectedData} />
         </div>
       </div>
     </div>

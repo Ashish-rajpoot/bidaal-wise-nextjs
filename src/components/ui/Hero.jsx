@@ -1,4 +1,4 @@
-import Button from "./ui/Button";
+import LinkButton from "./Button";
 
 const Hero = () => {
   return (
@@ -17,7 +17,7 @@ const Hero = () => {
           <p>record,store,visualize, and compile your</p>
           <p>illumination data in one place.</p>
         </div>
-        <Button>Contact us</Button>
+        <LinkButton>Contact us</LinkButton>
       </div>
     </div>
   );
