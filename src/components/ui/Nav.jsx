@@ -14,7 +14,7 @@ const Nav = () => {
         alt="logo"
         width={150}
         height={150}
-        className="text-white"
+        className="text-white shrink-0 min-w-[150px] min-h-[15px]"
       />
       <div className="grow flex justify-evenly  pl-20 max-lg:hidden relative">
         <ul className="flex items-center justify-evenly  max-md:flex-col max-md:gap-y-2 gap-x-14 bg-navBtnClr py-2 px-5 rounded-lg font-semibold">

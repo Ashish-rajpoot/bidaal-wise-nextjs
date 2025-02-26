@@ -12,7 +12,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
             alt="logo"
             width={150}
             height={150}
-            className="text-white"
+            className="text-white shrink-0 min-w-[150px] min-h-[15px]"
           />
         </a>
         <div
