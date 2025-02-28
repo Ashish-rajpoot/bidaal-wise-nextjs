@@ -8,7 +8,7 @@ import { routeLinks } from "@/data/data";
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="sticky top-0 w-full z-10 flex items-center max-sm:flex-col  max-md:gap-y-4 uppercase px-20 py-10  bg-gradient-to-r from-darkGreen to-lightGreen text-textWhite">
+    <div className="nav ">
       <Image
         src="/bidaal.svg"
         alt="logo"
@@ -16,21 +16,21 @@ const Nav = () => {
         height={150}
         className="text-white shrink-0 min-w-[150px] min-h-[15px]"
       />
-      <div className="grow flex justify-evenly  pl-20 max-lg:hidden relative">
-        <ul className="flex items-center justify-evenly  max-md:flex-col max-md:gap-y-2 gap-x-14 bg-navBtnClr py-2 px-5 rounded-lg font-semibold">
-          {routeLinks.map((link) => (
-            <li key={link.label}>
-              <a href={`${link.url}`} className="capitalize">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <ul className="flex items-center justify-evenly  max-md:flex-col max-md:gap-y-2 gap-x-14 bg-navBtnClr py-2 px-5 rounded-lg font-semibold max-lg:hidden">
+        {routeLinks.map((link) => (
+          <li key={link.label}>
+            <a href={`${link.url}`} className="capitalize">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className=" max-lg:hidden">
         <LinkButton>contact us</LinkButton>
       </div>
 
       <div
-        className="absolute w-fit nav-svg lg:hidden mr-20 max-md:mr-5"
+        className="absolute w-fit nav-svg mr-5 lg:hidden"
         onClick={() => setNavOpen(!navOpen)}
       >
         <Image src="svgs/menu.svg" alt="menu" width={40} height={40} />

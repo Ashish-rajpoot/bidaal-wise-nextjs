@@ -23,7 +23,7 @@ const Faq = () => {
   }, [selectedNav, inputValue]);
 
   return (
-    <div className="relative min-h-screen gradient-tb flex flex-col space-y-0 py-10">
+    <div className="relative min-h-screen gradient-tb flex flex-col space-y-0 py-10 mob-def-pad">
       {/* Background Image */}
       <div className="absolute ">
         <img
@@ -39,7 +39,7 @@ const Faq = () => {
         <FaqLinks selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
 
         {/* Search Box */}
-        <div className="flex flex-col py-5">
+        <div className="flex flex-col py-5 hidden">
           <input
             type="text"
             onChange={handleSearch}
@@ -49,7 +49,7 @@ const Faq = () => {
         </div>
 
         {/* FAQ Questions */}
-        <div className="mx-auto min-w-[65vw] px-5">
+        <div className="mx-auto min-w-[65vw]">
           <FaqAccordion data={faqsData} />
         </div>
       </div>

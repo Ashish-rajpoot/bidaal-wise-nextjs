@@ -5,7 +5,7 @@ import Image from "next/image";
 const MobileNav = ({ navOpen, setNavOpen }) => {
   return (
     <div className="absolute top-0 bg-gradient-to-b left-0 right-0 h-screen flex justify-start items-center flex-col z-20 space-y-1 overflow-y-auto">
-      <div className="py-10 justify-between items-center flex z-10">
+      <div className="mob-def-pad nav">
         <a className="mob-img" href="/product">
           <Image
             src="/bidaal.svg"
@@ -26,7 +26,7 @@ const MobileNav = ({ navOpen, setNavOpen }) => {
       {routeLinks.map((link) => (
         <a
           href={`${link.url}`}
-          className=" mob-nav capitalize"
+          className="mob-nav capitalize text-def"
           key={link.label}
         >
           {link.label}

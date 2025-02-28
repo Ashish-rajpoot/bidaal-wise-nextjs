@@ -6,7 +6,7 @@ import { faqLinks } from "@/data/data";
 const FaqLinks = ({ selectedNav, setSelectedNav }) => {
 
   return (
-    <div className="flex justify-evenly w-full text-slate-400 max-md:flex-col items-center gap-5">
+    <div className="flex justify-between w-full text-slate-400 max-md:flex-col items-center gap-8">
       {faqLinks.map((link, index) => (
         <FaqLink
           key={index}

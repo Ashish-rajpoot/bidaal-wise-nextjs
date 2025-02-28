@@ -53,8 +53,8 @@ export default function ScrollAnimation({ scrollData }) {
   }, []);
 
   return (
-    <div className="container">
-      <div ref={contentRef} className="content cursor-pointer">
+    <div className="container" >
+      <div className="content cursor-pointer"  ref={contentRef}>
         {scrollData.map((data, index) => (
           <div
             key={index}
