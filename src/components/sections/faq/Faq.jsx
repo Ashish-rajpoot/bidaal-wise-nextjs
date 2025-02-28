@@ -23,34 +23,36 @@ const Faq = () => {
   }, [selectedNav, inputValue]);
 
   return (
-    <div className="relative min-h-screen gradient-tb flex flex-col space-y-0 py-10 mob-def-pad">
-      {/* Background Image */}
-      <div className="absolute ">
-        <img
-          src="tharmal2.webp"
-          alt="device"
-          className="w-full h-full object-cover mix-blend-multiply faq-image "
-        />
-      </div>
-
-      {/* Content - Ensure it's clickable */}
-      <div className="relative z-10 flex flex-col items-center justify-center space-y-10 w-full">
-        <div className="faq-h1 text-white pb-5 py-5">FAQ</div>
-        <FaqLinks selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
-
-        {/* Search Box */}
-        <div className="flex flex-col py-5 hidden">
-          <input
-            type="text"
-            onChange={handleSearch}
-            placeholder="Search your question here"
-            className="rounded-full px-4 w-[400px] max-md:w-[200px] py-[5px] bg-white text-black focus:outline-none shadow-lg"
+    <div className="relative min-h-screen gradient-tb flex flex-col space-y-0 py-10 mob-def-pad overflow-hidden" >
+      <div className="large-screen-padding">
+        {/* Background Image */}
+        <div className="absolute ">
+          <img
+            src="tharmal2.webp"
+            alt="device"
+            className="w-full h-full object-cover mix-blend-multiply faq-image "
           />
         </div>
 
-        {/* FAQ Questions */}
-        <div className="mx-auto min-w-[65vw]">
-          <FaqAccordion data={faqsData} />
+        {/* Content - Ensure it's clickable */}
+        <div className="relative z-10 flex flex-col items-center justify-center space-y-10 w-full mob-def-pad 2xl:py-20">
+          <div className="faq-h1 text-white pb-5 py-5">FAQ</div>
+          <FaqLinks selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
+
+          {/* Search Box */}
+          <div className="flex flex-col py-5 hidden">
+            <input
+              type="text"
+              onChange={handleSearch}
+              placeholder="Search your question here"
+              className="rounded-full px-4 w-[400px] max-md:w-[200px] py-[5px] bg-white text-black focus:outline-none shadow-lg"
+            />
+          </div>
+
+          {/* FAQ Questions */}
+          <div className="mx-auto min-w-[65vw] pt-12">
+            <FaqAccordion data={faqsData} />
+          </div>
         </div>
       </div>
     </div>
