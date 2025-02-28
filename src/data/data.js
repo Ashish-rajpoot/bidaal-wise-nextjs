@@ -1,19 +1,19 @@
 export const routeLinks = [
   {
     label: "Product",
-    url: "/",
+    url: "/wise",
   },
   {
     label: "Solution",
-    url: "/",
+    url: "/wise",
   },
   {
     label: "resources",
-    url: "/",
+    url: "/wise",
   },
   {
     label: "company",
-    url: "/",
+    url: "/wise",
   },
 ];
 export const faqLinks = [

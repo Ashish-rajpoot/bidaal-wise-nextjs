@@ -1,6 +1,6 @@
 "use client"
 import Faq from "@/components/sections/faq/Faq";
-import Section2 from "@/components/sections/Section2";
+import ScrollSection from "@/components/sections/Section2";
 import Stories from "@/components/sections/Stories";
 import Banner from "@/components/ui/Banner";
 import Hero from "@/components/ui/Hero";
@@ -24,7 +24,7 @@ const page = () => {
         <Hero />
       </div>
       <Banner />
-      <Section2 />
+      <ScrollSection />
       <Stories />
       <Faq />
     </div>

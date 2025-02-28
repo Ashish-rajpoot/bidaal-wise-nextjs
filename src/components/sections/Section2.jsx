@@ -2,9 +2,9 @@ import React from "react";
 import ScrollAnimation from "../ui/gsapScroller";
 import { scrollData } from "@/data/data";
 
-const Section2 = () => {
+const ScrollSection = () => {
   return (
-    <div className="min-h-screen flex  items-center gradient-tb">
+    <div className="min-h-fit flex  items-center gradient-tb">
       <div className="h-fit w-full px-8">
         <ScrollAnimation scrollData={scrollData} />
       </div>
@@ -12,4 +12,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default ScrollSection;

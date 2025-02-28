@@ -1,10 +1,5 @@
 "use client";
-import Faq from "@/components/sections/faq/Faq";
-import Section2 from "@/components/sections/Section2";
-import Stories from "@/components/sections/Stories";
-import Banner from "@/components/ui/Banner";
-import Hero from "@/components/ui/Hero";
-import Nav from "@/components/ui/Nav";
+
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -16,17 +11,8 @@ export default function Home() {
     return <div>Loading</div>;
   }
   return (
-    <div className="overflow-hidden mx-auto">
-      <div className="min-h-screen">
-        <div className="w-screen h-full relative">
-          <Nav />
-        </div>
-        <Hero />
-      </div>
-      <Banner />
-      <Section2 />
-      <Stories />
-      <Faq />
+    <div className="overflow-hidden">
+      Home
     </div>
   );
 }
