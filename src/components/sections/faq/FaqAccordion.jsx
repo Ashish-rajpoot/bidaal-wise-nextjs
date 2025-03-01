@@ -10,11 +10,13 @@ export function FaqAccordion({ data }) {
   if (data === undefined || data.length < 1) {
     return (
       <div className="text-red-200 text-2xl">
-      <div className="text-red-200 text-2xl">
-        No Result Found for your Query!!!
+        <div className="text-red-200 text-2xl">
+          No Result Found for your Query!!!
+        </div>
       </div>
     );
   }
+
   return (
     <div className="w-full">
       <Accordion type="multiple" collapsible="true" className="w-full">
