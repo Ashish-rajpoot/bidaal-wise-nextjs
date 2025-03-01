@@ -28,7 +28,7 @@ export default function ScrollSection() {
     smallDivs.forEach((div, index) => {
       ScrollTrigger.create({
         trigger: div,
-        start: "top 35%",
+        start: "top 50%",
         onEnter: () => gsap.to(div, { opacity: 1, duration: 1 }),
         onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 1 }),
       });

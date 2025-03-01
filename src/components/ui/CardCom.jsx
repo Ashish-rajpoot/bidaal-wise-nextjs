@@ -19,11 +19,11 @@ const CardCom = ({ data = demodata[0] }) => {
     return <div>Loading</div>;
   }
   return (
-    <div className="flex overflow-hidden w-full h-[300px] relative justify-center items-center rounded-lg">
-      <div className="text-base md:text-lg px-10 w-1/2 text-white">
-        <p>{data.content}</p>
+    <div className="flex overflow-hidden w-full h-[300px] relative justify-center items-center rounded-lg max-md:flex-col max-md:h-fit gap-y-10 max-md:py-10">
+      <div className="text-base lg:text-base max-md:px-4 px-10 w-1/2 text-white max-md:w-full max-md:text-center">
+        <p className="max-md:line-clamp-4">{data.content}</p>
       </div>
-      <div className="w-1/2 h-full scroll-my-0">
+      <div className="w-1/2 h-full scroll-my-0 flex justify-center items-center">
         <img src={data.imgUrl} alt="img" />
       </div>
     </div>

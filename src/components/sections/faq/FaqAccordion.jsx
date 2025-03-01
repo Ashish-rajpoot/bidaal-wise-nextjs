@@ -26,7 +26,7 @@ export function FaqAccordion({ data }) {
             key={index}
             className="mb-8"
           >
-            <AccordionTrigger className="text-white text-2xl">
+            <AccordionTrigger className="text-white text-xl">
               {question.question}
             </AccordionTrigger>
             <AccordionContent className="text-slate-300 text-base">
