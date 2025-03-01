@@ -213,7 +213,7 @@
   @apply py-5 w-full mob-def-pad bg-stone-500;
 }
 .nav {
-  @apply mob-def-pad bg-gradient-to-r from-darkGreen to-lightGreen text-textWhite uppercase sticky top-0 w-full z-10 flex items-center justify-between py-10 ;
+  @apply mob-def-pad bg-gradient-to-r from-darkGreen to-lightGreen text-textWhite uppercase sticky top-0 w-full z-10 flex items-center justify-between py-10;
 }
 
 .container {
@@ -285,13 +285,17 @@
     animation: chevronArrow 1.5s infinite;
   }
 
-  .large-screen-padding{
-    @apply  max-2xl:w-full w-[65vw] mx-auto;
+  .large-screen-padding {
+    @apply max-2xl:w-full w-[65vw] mx-auto;
+  }
+
+  .lg-device {
+    @apply max-w-screen-2xl mx-auto;
   }
 }
 
 @layer utilities {
-  .divsection {
+  .section {
     min-width: 100vw;
     min-height: 100vh;
   }

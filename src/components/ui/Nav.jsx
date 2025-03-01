@@ -1,17 +1,29 @@
 "use client";
+import { routeLinks } from "@/data/data";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import LinkButton from "./Button";
 import MobileNav from "./MobileNav";
-import { useEffect, useState } from "react";
-import { routeLinks } from "@/data/data";
-import Link from "next/link";
+import { useNavHeight } from "@/providers/NavContext";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const { navRef, setNavHeight } = useNavHeight();
+
+  useEffect(() => {
+    if (navRef.current) {
+      setNavHeight(navRef.current.offsetHeight); // ✅ Update height when Nav loads
+    }
+  }, []);
+
   return (
     // <div className="nav">
-    <div className="bg-gradient-to-r from-darkGreen to-lightGreen text-textWhite uppercase sticky top-0 w-full z-20 flex items-center justify-between py-10 ">
-      <div className="flex justify-between items-center w-screen mob-def-pad">
+    <div
+      ref={navRef}
+      className="bg-gradient-to-r from-darkGreen to-lightGreen text-textWhite uppercase sticky top-0 w-full z-20 flex items-center justify-between py-10 "
+    >
+      <div className="flex justify-between items-center w-screen mob-def-pad lg-device">
         <Link href={"/"}>
           <Image
             src="/bidaal.svg"
@@ -31,7 +43,9 @@ const Nav = () => {
           ))}
         </ul>
         <div className=" max-lg:hidden">
-          <LinkButton href="/contact" className={""}>contact us</LinkButton>
+          <LinkButton href="/contact" className={""}>
+            contact us
+          </LinkButton>
         </div>
 
         <div

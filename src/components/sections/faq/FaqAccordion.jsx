@@ -15,17 +15,23 @@ export function FaqAccordion({ data }) {
     );
   }
   return (
-    <Accordion type="single" collapsible className="w-full">
-      {data.questions?.map((question, index) => (
-        <AccordionItem value={`item-${index + 1}`} key={index} className="mb-8">
-          <AccordionTrigger className="text-white text-2xl">
-            {question.question}
-          </AccordionTrigger>
-          <AccordionContent className="text-slate-300 text-base">
-            {question.answer}
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <div className="w-full">
+      <Accordion type="multiple" collapsible="true" className="w-full">
+        {data.questions?.map((question, index) => (
+          <AccordionItem
+            value={`item-${index + 1}`}
+            key={index}
+            className="mb-8"
+          >
+            <AccordionTrigger className="text-white text-2xl">
+              {question.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base">
+              {question.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
   );
 }
