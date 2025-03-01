@@ -299,19 +299,10 @@
     min-width: 100vw;
     min-height: 100vh;
   }
-
-  /* .mask1 {
-    -webkit-mask-image: linear-gradient(black, transparent);
-    mask-image: linear-gradient(black, transparent);
-    background-image: url("image3.jpg");
-  } */
-  /* .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, black 0%, transparent 100%);
-    pointer-events: none; 
-  } */
 }
+
+
+
 
 /* 
 

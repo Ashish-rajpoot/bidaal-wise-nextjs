@@ -10,6 +10,7 @@ export function FaqAccordion({ data }) {
   if (data === undefined || data.length < 1) {
     return (
       <div className="text-red-200 text-2xl">
+      <div className="text-red-200 text-2xl">
         No Result Found for your Query!!!
       </div>
     );
