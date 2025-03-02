@@ -58,7 +58,7 @@ export default function ScrollSection() {
 
           ScrollTrigger.create({
             trigger: div,
-            start: `top ${navHeight + 20}px`, // Adjust to avoid glitches
+            start: `top ${navHeight}px`, // Adjust to avoid glitches
             pin: true,
             pinSpacing: false, // ✅ Fix blank space issue on mobile
             endTrigger: lastSmallDiv,
