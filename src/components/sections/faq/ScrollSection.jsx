@@ -22,26 +22,54 @@ export default function ScrollSection() {
     if (!isLoading) return;
 
     const smallDivs = [...smallDivsRef.current];
-
     const lastSmallDiv = smallDivs[smallDivs.length - 1];
 
-    smallDivs.forEach((div, index) => {
-      ScrollTrigger.create({
-        trigger: div,
-        start: "top 50%",
-        onEnter: () => gsap.to(div, { opacity: 1, duration: 0.3 }),
-        onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 0.3 }),
-      });
+    ScrollTrigger.matchMedia({
+      // ✅ Pin on larger screens (default behavior)
+      "(min-width: 768px)": function () {
+        smallDivs.forEach((div, index) => {
+          ScrollTrigger.create({
+            trigger: div,
+            start: "top 50%",
+            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.3 }),
+            onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 0.3 }),
+          });
 
-      ScrollTrigger.create({
-        trigger: div,
-        start: `top ${navHeight}px`,
-        pin: true,
-        endTrigger: lastSmallDiv,
-        end: `top ${navHeight}px`,
-        scrub: true,
-      });
+          ScrollTrigger.create({
+            trigger: div,
+            start: `top ${navHeight}px`,
+            pin: true,
+            endTrigger: lastSmallDiv,
+            end: `top ${navHeight}px`,
+            scrub: true,
+          });
+        });
+      },
+
+      // ✅ Pin on mobile but adjust spacing
+      "(max-width: 767px)": function () {
+        smallDivs.forEach((div, index) => {
+          ScrollTrigger.create({
+            trigger: div,
+            start: "top 60%", // Adjust for better mobile scrolling
+            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.3 }),
+            onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 0.3 }),
+          });
+
+          ScrollTrigger.create({
+            trigger: div,
+            start: `top ${navHeight + 20}px`, // Adjust to avoid glitches
+            pin: true,
+            pinSpacing: false, // ✅ Fix blank space issue on mobile
+            endTrigger: lastSmallDiv,
+            end: `top ${navHeight}px`,
+            scrub: true,
+          });
+        });
+      },
     });
+
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, [isLoading, navHeight]);
 
   if (!isLoading) {
@@ -51,7 +79,7 @@ export default function ScrollSection() {
   return (
     <div className="gradient-tb">
       <div className="mob-def-pad lg-device">
-        <div className=" flex flex-col gap-40 ">
+        <div className="flex flex-col gap-40 max-md:gap-10">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
