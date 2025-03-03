@@ -266,13 +266,13 @@
 
 @keyframes chevronArrow {
   0% {
-    transform: rotate(90deg) translateX(0px);
-  }
-  50% {
     transform: rotate(90deg) translateX(10px);
   }
+  50% {
+    transform: rotate(90deg) translateX(30px);
+  }
   100% {
-    transform: rotate(90deg) translateX(0px);
+    transform: rotate(90deg) translateX(10px);
   }
 }
 

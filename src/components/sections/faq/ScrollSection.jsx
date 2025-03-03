@@ -25,14 +25,14 @@ export default function ScrollSection() {
     const lastSmallDiv = smallDivs[smallDivs.length - 1];
 
     ScrollTrigger.matchMedia({
-      // ✅ Pin on larger screens (default behavior)
+      // Pin on larger screens (default behavior)
       "(min-width: 768px)": function () {
         smallDivs.forEach((div, index) => {
           ScrollTrigger.create({
             trigger: div,
-            start: "top 50%",
-            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.3 }),
-            onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 0.3 }),
+            start: "top 100%",
+            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.7 }),
+            onLeaveBack: () => gsap.to(div, { opacity: 1, duration: 0.7 }),
           });
 
           ScrollTrigger.create({
@@ -46,14 +46,14 @@ export default function ScrollSection() {
         });
       },
 
-      // ✅ Pin on mobile but adjust spacing
+      //  Pin on mobile but adjust spacing
       "(max-width: 767px)": function () {
         smallDivs.forEach((div, index) => {
           ScrollTrigger.create({
             trigger: div,
-            start: "top 60%", // Adjust for better mobile scrolling
-            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.3 }),
-            onLeaveBack: () => gsap.to(div, { opacity: 0, duration: 0.3 }),
+            start: "top 100%", // Adjust for better mobile scrolling
+            onEnter: () => gsap.to(div, { opacity: 1, duration: 0.7 }),
+            onLeaveBack: () => gsap.to(div, { opacity: 1, duration: 0.7 }),
           });
 
           ScrollTrigger.create({
@@ -79,13 +79,13 @@ export default function ScrollSection() {
   return (
     <div className="gradient-tb">
       <div className="mob-def-pad lg-device">
-        <div className="flex flex-col gap-40 max-md:gap-10">
+        <div className="flex flex-col gap-[100vh] max-md:gap-[60vh] py-10">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
               ref={(el) => (smallDivsRef.current[i] = el)}
-              className="small-box w-full min-h-[300px] rounded-lg bg-navBtnClr"
-              style={{ zIndex: 1, opacity: 0 }}
+              className="small-box w-full min-h-[21rem] max-h-[20rem] rounded-lg bg-navBtnClr overflow-hidden"
+              style={{ zIndex: 1, opacity: 1 }}
             >
               <CardCom data={cardData[i]} />
             </div>

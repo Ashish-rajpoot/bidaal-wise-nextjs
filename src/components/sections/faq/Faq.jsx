@@ -35,7 +35,7 @@ const Faq = () => {
 
       {/* Content - Ensure it's clickable */}
       <div className="relative z-10 flex flex-col items-center justify-center space-y-10 w-full lg-device">
-        <div className="text-3xl text-white pb-5 py-5">FAQ</div>
+        <h1 className="text-6xl max-md:text-3xl text-white pb-5 py-5 font-semibold">FAQ</h1>
         <FaqLinks selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
 
         {/* Search Box */}

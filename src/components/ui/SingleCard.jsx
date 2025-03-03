@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SingleCard = ({ image }) => {
   return (
-    <div className="w-full h-[450px] relative ring-1 ring-black rounded-lg overflow-hidden">
+    <div className="w-full h-[450px] relative rounded-lg overflow-hidden shadow-xl">
       <div className="card-image w-full h-[200px] flex justify-center items-center overflow-hidden bg-red-500">
         <img src={image} alt="image1" className="w-full h-full" />
       </div>

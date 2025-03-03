@@ -26,7 +26,8 @@ const Nav = () => {
       <div className="flex justify-between items-center w-screen mob-def-pad lg-device">
         <Link href={"/"}>
           <Image
-            src="/bidaal.svg"
+            src="/bidaal.svg" 
+            priority
             alt="logo"
             width={150}
             height={150}
